@@ -1,0 +1,23 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="form-container">
+    <mat-form-field>
+      <input matInput [formControl]="registerForm.get('username')" maxlength="12" required placeholder="{{!registerForm.get('username').valid && registerForm.get('username').touched ? 
+        'Username is required' : 'Username' }}">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [formControl]="registerForm.get('email')" maxlength="36" required placeholder="{{getErrorMessageEmail()}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [formControl]="registerForm.get('password')" maxlength="6" required placeholder="{{getErrorMessagePassword()}}"
+        type="password">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [formControl]="registerForm.get('confirmPassword')" maxlength="6" required placeholder="{{getErrorMessageConfirmPassword()}}"
+        type="password">
+    </mat-form-field>
+    <button mat-flat-button [disabled]="!registerForm.valid" type="submit">Register
+      <i class="fa fa-user-plus"></i>
+    </button>
+    <button mat-flat-button type="button" (click)="cancel()">Cancel <i class="fa fa-ban"></i></button>
+  </div>
+</form>

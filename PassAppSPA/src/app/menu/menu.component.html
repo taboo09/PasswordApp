@@ -1,0 +1,26 @@
+<div class="form-container">
+  <button class="btn btn-light w-auto btn-sm border-0 rounded-0 time-menu" disabled>
+    Logged On Time <i class="fa fa-clock-o"></i> {{ loggedInTime }} min
+  </button>
+  <button mat-flat-button [routerLink]="['/userinfo']">
+      Hi, {{ authService.username }}
+      <i class="fa fa-user"></i>
+    </button>
+    <button mat-flat-button [routerLink]="['/passwords']">
+      {{ passwordsCount }}
+      Passwords
+      <i class="fa fa-list-alt"></i>
+    </button>
+    <button mat-flat-button [routerLink]="['/new']">
+      New Password
+      <i class="fa fa-plus-square"></i>
+    </button>
+    <button mat-flat-button [routerLink]="['/about']" color="accent">
+      About
+      <i class="fa fa-book"></i>
+    </button>
+    <button (click)="logout()" mat-flat-button color="warn">
+      Logout
+      <i class="fa fa-sign-out"></i>
+    </button>
+</div>

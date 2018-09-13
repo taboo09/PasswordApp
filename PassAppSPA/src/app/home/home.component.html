@@ -1,0 +1,25 @@
+<app-login *ngIf="!registerMode && !loggedIn">
+
+</app-login>
+
+<app-register *ngIf="registerMode && !loggedIn" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+
+<div *ngIf="loggedIn" class="row mb-auto">
+  <div class="form-container">
+    <button mat-flat-button type="button" color="primary" [routerLink]="['/menu']">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <button mat-flat-button type="button" color="warn" (click)="logout()">
+      Logout
+      <i class="fa fa-sign-out"></i>
+    </button>
+  </div>
+</div>
+
+<div class="form-container" *ngIf="!loggedIn && !registerMode">
+  <button mat-flat-button type="button" (click)="registerToggle()">
+    New User
+    <i class="fa fa-user-plus"></i>
+  </button>
+</div>

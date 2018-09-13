@@ -1,0 +1,57 @@
+<div class="form-container">
+  <button class="btn w-auto border-0 rounded-0 back-menu" [routerLink]="['/menu']">
+    <i class="fa fa-backward"></i> Menu
+  </button>
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+    <input matInput value="{{user.username}}" readonly>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Date Created</mat-label>
+    <input matInput value="{{user.dateCreated | date}}" readonly>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput value="{{user.email}}" readonly>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Passwords</mat-label>
+    <input matInput value="{{user.passwordsCount}}" readonly>
+    <mat-icon matSuffix style="cursor:pointer" [routerLink]="['/passwords']">
+      <i class="fa fa-arrow-right"></i>
+    </mat-icon>
+  </mat-form-field>
+
+  <form [formGroup]="changePassForm" (ngSubmit)="changePass()">
+    <mat-form-field appearance="outline">
+      <mat-label>Change Password</mat-label>
+      <input matInput placeholder="Your Password" type="password" formControlName="password" required minlength="4" maxlength="6">
+    </mat-form-field>
+    <mat-form-field *ngIf="changePassForm.get('password').valid">
+      <input matInput placeholder="New Password" type="password" formControlName="newPassword" required minlength="4" maxlength="6">
+    </mat-form-field>
+    <mat-form-field *ngIf="changePassForm.get('password').valid" style="margin-bottom: -10px">
+      <input matInput placeholder="Confirm Password" type="password" formControlName="confirmPassword" required minlength="4" maxlength="6">
+    </mat-form-field>
+
+    <mat-error>{{formError()}}</mat-error>
+    <mat-error *ngIf="changePassForm.hasError('mismatch') && changePassForm.get('confirmPassword').touched">
+      New password is not confirmed!
+    </mat-error>
+
+    <button mat-flat-button type="submit" style="margin-bottom: 30px;margin-top:-5px;"
+      *ngIf="changePassForm.get('confirmPassword').valid && !changePassForm.hasError('mismatch')">
+      <i class="fa fa-key"></i>
+    </button>
+
+  </form>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Delete Account</mat-label>
+    <input matInput placeholder="Your password..." name="passwordDelete" type="password" [(ngModel)]="passwordDelete" required
+      minlength="4" maxlength="6">
+    <mat-icon matSuffix (click)="deleteUser()" style="cursor:pointer" *ngIf="passwordDelete.length > 3">
+      <i class="fa fa-trash"></i>
+    </mat-icon>
+  </mat-form-field>
+</div>

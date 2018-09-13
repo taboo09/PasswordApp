@@ -1,0 +1,7 @@
+input{
+    margin: 3px 0;
+    text-align: center;
+}
+.form-container form > *{
+    width: 100%;
+}

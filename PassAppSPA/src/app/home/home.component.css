@@ -1,0 +1,9 @@
+button{
+    margin-top: 3px;
+}
+button.register{
+    background-color: transparent;
+}
+button.register i{
+    font-size: 30px;
+}

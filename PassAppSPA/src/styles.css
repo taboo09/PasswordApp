@@ -1,0 +1,131 @@
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
+
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    /* background: linear-gradient(rgba(135,206,250, 0.8), rgba(135,206,250, 0.3)) no-repeat fixed; */
+    background-color: #12263f;
+    font-family: 'Alef', sans-serif;
+    /* color: #f7f9f9  */
+    color: #fff;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width:350px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 900px){
+      .form-container {
+          width: 400px;
+      }
+  }
+  @media (max-width: 375px){
+    button.mat-flat-button{
+        padding: 0.2em 0;
+        margin-bottom: 5px;
+    }
+  }
+  @media (max-width: 320px){
+      .form-container {
+          width: 290px;
+          margin-left: .9em;
+      }
+  }
+  
+  .form-container > * {
+    width: 100%;
+  }
+  .form-container button.back-menu{
+    max-width: fit-content;
+  }
+
+  .mat-form-field-suffix .mat-icon{
+      font-size: 100%;
+  }
+
+input{
+    background-color: transparent !important;
+}
+
+img{
+    margin: 25px 0;
+}
+
+footer{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 100%;
+    margin-top: 50px
+}
+
+.u-space-1 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: inherit;
+}
+input.is-invalid::-webkit-input-placeholder{
+    color: orangered !important;
+}
+input.is-invalid::-input-placeholder{
+    color: orangered !important;
+}
+input.is-invalid::-moz-placeholder{
+    color: orangered !important;
+}
+input.is-invalid:-moz-placeholder{
+    color: orangered !important;
+}
+span.invalid-feedback{
+    text-align: right;
+    font-weight: 400;
+    color: orangered;
+}
+
+button.back-menu{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    background-color: transparent;
+    opacity: .8;
+    color: #f7f9f9;
+}
+button.back-menu i{
+    margin-right: 5px;
+}
+button.back-menu:active:focus{
+    background-color: transparent;
+}
+button.back-menu:hover{
+    opacity: .95;
+}
+/* Alertity JS */
+.alertify-notifier .ajs-message.ajs-success{
+    background-color: rgba(128,0,128,.85)
+}
+.alertify-notifier .ajs-message{
+    background-color: rgba(240,240,240,.85)
+}
+/* placeholder color */
+.mat-form-field-appearance-legacy .mat-form-field-label, .mat-form-field-appearance-outline .mat-form-field-label{
+    color: #fff;
+}
+/* border and label color on focused */
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+    color: rgb(100, 100, 255);
+}
+.mat-form-field.mat-focused .mat-form-field-label{
+    color: rgb(120, 120, 255);
+}
+.mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: rgb(100, 100, 255);
+}

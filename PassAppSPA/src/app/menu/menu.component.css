@@ -1,0 +1,14 @@
+button{
+    margin-bottom: 5px;
+}
+
+button.time-menu{
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+    opacity: .8;
+    color:  #f7f9f9 ;
+}
+button.time-menu i{
+    margin:0 5px;
+}
