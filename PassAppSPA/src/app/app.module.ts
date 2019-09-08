@@ -31,10 +31,17 @@ export function getAccessToken(): string {
   return localStorage.getItem('token');
 }
 
-export const jwtConfig = {
-  tokenGetter: getAccessToken(),
-  whitelistedDomains: ['localhost:5000']
-}
+// export const jwtConfig = {
+//   tokenGetter: getAccessToken(),
+//   whitelistedDomains: ['localhost:5000']
+// }
+
+const jwtConf = {
+  config: {
+    tokenGetter: getAccessToken,
+    whitelistedDomains: ['localhost:5000']
+  }
+};
 
 @NgModule({
   declarations: [
@@ -60,14 +67,7 @@ export const jwtConfig = {
     MatButtonModule,
     MatIconModule,
     RouterModule.forRoot(appRoutes),
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: () => {
-          return localStorage.getItem('token');
-        },
-        whitelistedDomains: ['localhost:5000']
-      }
-    })
+    JwtModule.forRoot(jwtConf)
   ],
   providers: [
     AuthService,

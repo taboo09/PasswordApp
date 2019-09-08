@@ -74,7 +74,7 @@ namespace PassApp.API
 
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
             app.UseAuthentication();
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();

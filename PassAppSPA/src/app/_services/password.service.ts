@@ -5,12 +5,14 @@ import { PasswordReg } from './../_models/PasswordReg';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Password } from '../_models/Password';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PasswordService {
-  baseUrl: string = 'https://localhost:5000/api/password/';
+  // baseUrl: string = 'https://localhost:5000/api/password/';
+  baseUrl: string = environment.apiUrl + 'password/';
   password: PasswordReg;
 
   constructor(private http: HttpClient, private authService: AuthService) { }

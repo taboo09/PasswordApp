@@ -10,3 +10,18 @@ $my-theme-warn: mat-palette($mat-red);
 $my-theme-theme: mat-dark-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
 
 @include angular-material-theme($my-theme-theme);
+
+// Set up the Alef Font
+$custom-typography: mat-typography-config(
+    $font-family:   'Alef'
+);
+
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+@include mat-core($custom-typography);
