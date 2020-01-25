@@ -15,9 +15,9 @@
       <input matInput [formControl]="registerForm.get('confirmPassword')" maxlength="6" required placeholder="{{getErrorMessageConfirmPassword()}}"
         type="password">
     </mat-form-field>
-    <button mat-flat-button [disabled]="!registerForm.valid" type="submit">Register
+    <button mat-flat-button color="primary" [disabled]="!registerForm.valid" type="submit">Register
       <i class="fa fa-user-plus"></i>
     </button>
-    <button mat-flat-button type="button" (click)="cancel()">Cancel <i class="fa fa-ban"></i></button>
+    <button mat-flat-button color="warn" type="button" (click)="cancel()">Cancel <i class="fa fa-ban"></i></button>
   </div>
 </form>

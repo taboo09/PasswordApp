@@ -7,7 +7,7 @@
       <input matInput placeholder="Password" name="password" [(ngModel)]="model.password" type="password" minlength="4" maxlength="6"
         required>
     </mat-form-field>
-    <button mat-flat-button [disabled]="!loginForm.valid" type="submit">Login
+    <button mat-flat-button color="primary" [disabled]="!loginForm.valid" type="submit">Login
       <i class="fa fa-lock" *ngIf="!loginForm.valid"></i>
     </button>
   </div>

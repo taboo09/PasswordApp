@@ -2,16 +2,16 @@
   <button class="btn btn-light w-auto btn-sm border-0 rounded-0 time-menu" disabled>
     Logged On Time <i class="fa fa-clock-o"></i> {{ loggedInTime }} min
   </button>
-  <button mat-flat-button [routerLink]="['/userinfo']">
+  <button mat-flat-button color="primary" [routerLink]="['/userinfo']">
       Hi, {{ authService.username }}
       <i class="fa fa-user"></i>
     </button>
-    <button mat-flat-button [routerLink]="['/passwords']">
+    <button mat-flat-button color="primary" [routerLink]="['/passwords']">
       {{ passwordsCount }}
       Passwords
       <i class="fa fa-list-alt"></i>
     </button>
-    <button mat-flat-button [routerLink]="['/new']">
+    <button mat-flat-button color="primary" [routerLink]="['/new']">
       New Password
       <i class="fa fa-plus-square"></i>
     </button>

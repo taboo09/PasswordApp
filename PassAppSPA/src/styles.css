@@ -107,6 +107,7 @@ button.back-menu:active:focus{
 }
 button.back-menu:hover{
     opacity: .95;
+    color: #f7f9f9;
 }
 /* Alertity JS */
 .alertify-notifier .ajs-message.ajs-success{
